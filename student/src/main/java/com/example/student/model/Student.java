@@ -29,7 +29,4 @@ public class Student {
     @Column(name = "grade")
     private String grade;
 
-//    @Column(name = "tests")
-//    @OneToMany(mappedBy = "studentAccount", cascade = CascadeType.ALL)
-//    private List<Test> tests;
 }

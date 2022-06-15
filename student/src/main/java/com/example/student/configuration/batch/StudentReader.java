@@ -16,6 +16,11 @@ public class StudentReader extends FlatFileItemReader<Student> implements ItemRe
         setLinesToSkip(1);
         setLineMapper(getDefaultLineMapper());
     }
+
+    /**
+     * Initializes the line mapper to be used within Student batch processing.
+     * @return New line mapper
+     */
     public DefaultLineMapper<Student> getDefaultLineMapper() {
         DefaultLineMapper<Student> defaultLineMapper = new DefaultLineMapper<Student>();
         DelimitedLineTokenizer delimitedLineTokenizer = new DelimitedLineTokenizer();
@@ -28,14 +33,10 @@ public class StudentReader extends FlatFileItemReader<Student> implements ItemRe
         });
 
         defaultLineMapper.setLineTokenizer(delimitedLineTokenizer);
-
         BeanWrapperFieldSetMapper<Student> beanWrapperFieldSetMapper = new BeanWrapperFieldSetMapper<Student>();
         beanWrapperFieldSetMapper.setTargetType(Student.class);
-
         beanWrapperFieldSetMapper.setDistanceLimit(1);
-
         defaultLineMapper.setFieldSetMapper(beanWrapperFieldSetMapper);
-
         return defaultLineMapper;
 
     }

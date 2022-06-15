@@ -32,15 +32,11 @@ public class BatchConfiguration {
     @Autowired
     JobBuilderFactory jobBuilderFactory;
 
-//    @Autowired
-//    DataSource dataSource;
-
     @Autowired
     StudentReader studentReader;
 
     @Autowired
     StudentWriter studentWriter;
-
     @Bean("ETL")
     public Job jobRun() {
         return jobBuilderFactory.get("myJob")
@@ -58,7 +54,12 @@ public class BatchConfiguration {
                 .writer(studentWriter)
                 .build();
     }
-//    @Bean
+
+    /**
+     * Reads data from incoming file specified from job parameters.
+     * @param fileName Name of file to be processed.
+     * @return ItemReader to be used in the reading of Student objects.
+     */
     @Bean
     @StepScope
     public ItemReader<Student> reader(@Value("#{jobParameters['fileName']}") String fileName) {
@@ -76,16 +77,4 @@ public class BatchConfiguration {
         reader.setDelegate(studentReader);
         return reader;
     }
-
 }
-//make an api, csv as input
-//populate sql table from input
-
-//start implementation of microservices
-//make microservices of this batch
-//make a microservice of previous task (DTO, Address & User)
-//make csv file of User and Addresses and we wil communicate between two microservices and upload as ETL
-
-//Spring Cloud or Eureka (spring cloud more recent)
-
-//Family, Occupation, Recreation, Message
