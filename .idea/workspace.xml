@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b514cff9-78b9-4c8b-8dda-cc26419af8e8" name="Changes" comment="" />
+    <list default="true" id="b514cff9-78b9-4c8b-8dda-cc26419af8e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applog/src/main/java/com/example/applog/controller/AppLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/applog/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -21,6 +32,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2AaLA9NQRw0hukBTZMzLfg6tLwM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,6 +41,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "/Users/caseygehling/Desktop/microservices_project",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
@@ -36,7 +49,12 @@
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.AppLogApplication">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.applog.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StudentApplication">
     <configuration name="AppLogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.applog.AppLogApplication" />
       <module name="applog" />
@@ -78,8 +96,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AppLogApplication" />
         <item itemvalue="Application.StudentApplication" />
+        <item itemvalue="Application.AppLogApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
       </list>
     </recent_temporary>

@@ -2,6 +2,7 @@ package com.example.student.services;
 
 
 import com.example.student.model.Student;
+import org.codehaus.jettison.json.JSONException;
 
 public interface StudentService {
 
@@ -10,4 +11,6 @@ public interface StudentService {
     Student findById(Long id);
 
     void deleteById(Long id);
+
+    void sendAppLog(String message, Long time) throws JSONException;
 }

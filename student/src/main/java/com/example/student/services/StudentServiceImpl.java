@@ -2,8 +2,14 @@ package com.example.student.services;
 
 import com.example.student.model.Student;
 import com.example.student.repository.StudentRepository;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
 
@@ -36,5 +42,24 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public void deleteById(Long id) {
         studentRepository.deleteById(id);
+    }
+
+    @Override
+    public void sendAppLog(String message, Long time) throws JSONException {
+        String url = "http://localhost:8082/applog-services/createAppLog";
+        JSONObject appLogJSON = new JSONObject();
+        try {
+            appLogJSON.put("message", message);
+            appLogJSON.put("time", time);
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+//        System.out.println(appLogJSON.toString());
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<String> request = new HttpEntity<String>(appLogJSON.toString(), headers);
+//        System.out.println(request.toString());
+        RestTemplate restTemplate = new RestTemplate();
+        String jsonReturn = restTemplate.postForObject("http://localhost:8082/applog-services/createAppLog", request, String.class);
     }
 }

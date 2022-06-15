@@ -4,6 +4,7 @@ import com.example.student.mapper.StudentDTO;
 import com.example.student.mapper.StudentMapper;
 import com.example.student.model.Student;
 import com.example.student.services.StudentService;
+import org.codehaus.jettison.json.JSONException;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameter;
 import org.springframework.batch.core.JobParameters;
@@ -15,6 +16,7 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -68,10 +70,11 @@ public class StudentController {
             jobLauncher.run((Job)applicationContext.getBean("ETL"), jobParameters);
         } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException |
                  JobParametersInvalidException e) {
-            throw new RuntimeException(e);
-//            AppLog.build()
-            //TODO IMPLEMENT APPLOG FUNCTIONALITY
-//                    ...
+            try {
+                studentService.sendAppLog(e.getMessage(), System.currentTimeMillis());
+            } catch (JSONException err) {
+                throw new RuntimeException(err);
+            }
         }
     }
 
