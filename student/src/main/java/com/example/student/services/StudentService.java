@@ -5,6 +5,8 @@ import com.example.student.exceptions.NotFoundException;
 import com.example.student.model.Student;
 import org.codehaus.jettison.json.JSONException;
 
+import java.util.Date;
+
 public interface StudentService {
 
     Student saveOrUpdate (Student student) throws NotFoundException;
@@ -13,7 +15,7 @@ public interface StudentService {
 
     void deleteById(Long id);
 
-    void sendAppLog(String message, Long time) throws JSONException;
+    void sendAppLog(String message, String time) throws JSONException;
 
     void batchProcess(String filename);
 }

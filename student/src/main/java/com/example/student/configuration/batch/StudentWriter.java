@@ -25,7 +25,7 @@ public class StudentWriter implements ItemWriter<Student> {
     @Override
     public void write(List<? extends Student> list) throws Exception {
         for (Student student : list) {
-            logger.debug(String.format("StudentWriter:\n\tWriting data: %s %s %s %s", student.getFirstName(), student.getLastName(), student.getSsn(), student.getGrade()));
+            logger.info(String.format("\tWriting data: %s %s %s %s", student.getFirstName(), student.getLastName(), student.getSsn(), student.getGrade()));
             studentRepository.save(student);
         }
     }
