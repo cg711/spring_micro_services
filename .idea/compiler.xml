@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="discovery_server" />
+        <module name="security" />
         <module name="student" />
         <module name="gateway" />
         <module name="applog" />
@@ -17,6 +18,7 @@
       <module name="applog" target="1.8" />
       <module name="discovery_server" target="1.8" />
       <module name="gateway" target="1.8" />
+      <module name="security" target="1.8" />
       <module name="student" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -25,6 +27,7 @@
       <module name="applog" options="-parameters" />
       <module name="discovery_server" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="security" options="-parameters" />
       <module name="student" options="-parameters" />
     </option>
   </component>
