@@ -1,8 +1,11 @@
 package com.example.security.jwt;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -12,11 +15,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Objects;
 
-@AllArgsConstructor
+@Component
 public class JwtTokenFilter extends OncePerRequestFilter {
 
+    @Autowired
     private JwtTokenProvider jwtTokenProvider;
 
+    public JwtTokenFilter(JwtTokenProvider jwtTokenProvider) {
+        this.jwtTokenProvider = jwtTokenProvider;
+    }
     /**
      * Parses the JWT present within the request header, fetches the claims
      * present inside the parsed JWT token, and sets the security context
@@ -29,7 +36,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
      */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-         String token = jwtTokenProvider.parseToken(request);
+        String token = jwtTokenProvider.parseToken(request);
         try {
             if(!Objects.isNull(token) && jwtTokenProvider.validateToken(token)) {
                 Authentication auth = jwtTokenProvider.getAuthentication(token);

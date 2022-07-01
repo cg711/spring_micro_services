@@ -3,7 +3,9 @@ package com.example.security.jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +14,7 @@ import java.util.Base64;
 import java.util.Date;
 
 @Component
+@Service
 public class JwtUtil implements Serializable {
     private String secretKey;
 

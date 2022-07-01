@@ -8,10 +8,22 @@ spring:
     gateway:
       routes:
         - id: studentModule
-          uri: http://localhost:8081/student-service
+          uri: http://localhost:8081
           predicates:
             - Path=/student/**
         - id: appLogModule
-          uri: http://localhost:8082/applog-service
+          uri: http://localhost:8082
           predicates:
             - Path=/applog/**
+        - id: securityModule
+          uri: http://localhost:8084
+          predicates:
+            - Path=/security/**
+#zuul:
+#  routes:
+#    student-service:
+#      path: /student-service/**
+#      url: http://localhost:8081/student-service
+#    applog-service:
+#      path: /applog-service/**
+#      url: http://localhost:8082/applog-service

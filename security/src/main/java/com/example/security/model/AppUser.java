@@ -1,11 +1,10 @@
 package com.example.security.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Table(name = "users")
 @Entity
@@ -13,6 +12,7 @@ import javax.persistence.*;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +23,9 @@ public class AppUser {
 
     @Column(name = "password")
     private String password;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Builder.Default
+    private List<String> roles = new ArrayList<>();
+
 }

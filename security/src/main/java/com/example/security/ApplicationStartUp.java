@@ -1,8 +1,7 @@
 package com.example.security;
 
-import com.example.security.model.User;
+import com.example.security.model.AppUser;
 import com.example.security.repository.SecurityRepository;
-import org.apache.commons.lang.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -24,11 +23,12 @@ public class ApplicationStartUp {
     @Bean
     public CommandLineRunner loadData() {
         return (args) -> {
-            List<User> users = securityRepository.findAll();
+            List<AppUser> users = securityRepository.findAll();
             if(users.isEmpty()) {
-                securityRepository.save(User.builder()
+                securityRepository.save(AppUser.builder()
                         .username("admin")
                         .password(BCrypt.hashpw("password", BCrypt.gensalt()))
+                        .roles(Arrays.asList("ADMIN"))
                         .build());
             }
         };

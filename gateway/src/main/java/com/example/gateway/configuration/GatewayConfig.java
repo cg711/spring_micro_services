@@ -16,9 +16,12 @@ public class GatewayConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/student/**")
-                        .uri("http://localhost:8081/student-service"))
+                        .uri("http://localhost:8081"))
                 .route(r -> r.path("/applog/**")
-                        .uri("http://localhost:8082/applog-service"))
+                        .uri("http://localhost:8082"))
+                .route(r -> r.path("/security/**")
+                        .uri("http://localhost:8084"))
                 .build();
     }
+    //TODO call security before each oncoming requeste
 }

@@ -10,5 +10,7 @@ import java.io.Serializable;
 @Data
 @Configuration
 public class JwtProperties implements Serializable {
+
     private String secretKey;
+
 }
