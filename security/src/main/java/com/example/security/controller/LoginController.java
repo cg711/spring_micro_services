@@ -21,6 +21,12 @@ public class LoginController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginServiceImpl.class);
 
+    /**
+     * Attempts to authenticate a user.
+     * @param requestDTO JSON body with credential and password.
+     * @param request Http incoming request.
+     * @return New ResponseEntity object.
+     */
     @PostMapping("/login")
     public ResponseEntity<String> loginUser(@RequestBody LoginRequestDTO requestDTO, HttpServletRequest request) {
         String token = loginService.login(requestDTO, request);
@@ -28,8 +34,4 @@ public class LoginController {
         return ok().body(loginService.login(requestDTO, request));
     }
 
-    @GetMapping("/")
-    public void test() {
-        LOGGER.info("test");
-    }
 }

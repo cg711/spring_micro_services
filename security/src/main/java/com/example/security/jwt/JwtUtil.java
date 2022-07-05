@@ -50,6 +50,3 @@ public class JwtUtil implements Serializable {
         return new Date(current.getTime() + (1000 * 3600 * 5));
     }
 }
-
-//common service implementation
-//Zuul RND

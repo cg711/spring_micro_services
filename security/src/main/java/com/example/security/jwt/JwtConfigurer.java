@@ -14,6 +14,11 @@ public class JwtConfigurer extends SecurityConfigurerAdapter<DefaultSecurityFilt
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
 
+    /**
+     * Configures incoming http requests.
+     * @param http Incoming http security object.
+     * @throws Exception
+     */
     @Override
     public void configure(HttpSecurity http) throws Exception {
         JwtTokenFilter customFilter = new JwtTokenFilter(jwtTokenProvider);

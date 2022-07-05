@@ -1,6 +1,5 @@
 package com.example.security.services;
 
-import com.example.security.UserInterface;
 import com.example.security.dtos.UserResponseDTO;
 import com.example.security.jwt.JwtUtil;
 import com.example.security.dtos.LoginRequestDTO;
@@ -28,31 +27,46 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private UserService userService;
 
+    /**
+     * Attempts to login the user given a username and password.
+     * @param loginRequestDTO JSON body storing credential and password
+     * @param request Serverlet request object
+     * @return Created JWT token.
+     */
     @Override
     public String login(LoginRequestDTO loginRequestDTO, HttpServletRequest request) {
         UserResponseDTO user = fetchUserDetails.apply(loginRequestDTO);
         validateUserUsername.accept(user);
-//        validateUserPassword.accept(loginRequestDTO, user);
+        validateUserPassword.accept(loginRequestDTO, user);
         return jwtUtil.createJWT(loginRequestDTO.getCredential(), request);
     }
 
+    /**
+     * Returns the details of a specified user.
+     */
     private Function<LoginRequestDTO, UserResponseDTO> fetchUserDetails = (loginRequestDTO) -> {
         return userService.searchUser(UserRequestDTO.builder().username(loginRequestDTO.getCredential()).build());
     };
 
+    /**
+     * Attempts to validate a username.
+     */
     private Consumer<UserResponseDTO> validateUserUsername = (user) -> {
         if (Objects.isNull(user)) {
             throw new RuntimeException();
         }
         LOGGER.info("Username validated...");
     };
-//    private BiConsumer<LoginRequestDTO, UserResponseDTO> validateUserPassword = (requestDTO, user) -> {
-//        if (BCrypt.checkpw(requestDTO.getPassword(), user.getPassword())) {
-//            userService.updateUser(user);
-//        } else {
-//            LOGGER.debug("Incorrect password...");
-//        }
-//        LOGGER.info("Password validated...");
-//    };
+    /**
+     * Attempts to validate a password.
+     */
+    private BiConsumer<LoginRequestDTO, UserResponseDTO> validateUserPassword = (requestDTO, user) -> {
+        if (BCrypt.checkpw(requestDTO.getPassword(), user.getPassword())) {
+            userService.updateUser(user);
+        } else {
+            LOGGER.debug("Incorrect password...");
+        }
+        LOGGER.info("Password validated...");
+    };
 
 }

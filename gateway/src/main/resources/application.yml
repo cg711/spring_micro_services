@@ -19,6 +19,9 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/security/**
+jwt:
+  secretKey: I3hOuPeAlD5sytwySQp4vK3mlJTk37aGwKdLZKyir7HwDMW0I62YRxm8Pk2rYWa
+
 #zuul:
 #  routes:
 #    student-service:
