@@ -21,6 +21,7 @@ public class GatewayConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/student/**")
+                        .filters(f -> f.filter(authenticationFilter))
                         .uri("http://localhost:8081"))
                 .route(r -> r.path("/applog/**")
                         .filters(f -> f.filter(authenticationFilter))

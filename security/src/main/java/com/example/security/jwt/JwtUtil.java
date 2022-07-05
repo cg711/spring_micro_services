@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Date;
 
@@ -37,7 +38,7 @@ public class JwtUtil implements Serializable {
                 .setSubject(username)
                 .setIssuer("admin")
                 .setExpiration(calculateExpirationDate())
-                .signWith(SignatureAlgorithm.HS256, secretKey)
+                .signWith(SignatureAlgorithm.HS256, Base64.getEncoder().encodeToString(secretKey.getBytes(StandardCharsets.US_ASCII)))
                 .compact();
     }
 

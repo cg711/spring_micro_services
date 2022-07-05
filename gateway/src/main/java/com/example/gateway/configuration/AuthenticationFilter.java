@@ -31,7 +31,6 @@ public class AuthenticationFilter implements GatewayFilter {
         final List<String> openApiEndpoints= new ArrayList<String>(1);
 
         boolean added = openApiEndpoints.add("/security/login");
-
         Predicate<ServerHttpRequest> isSecured =
                 r -> openApiEndpoints
                         .stream()
@@ -56,7 +55,6 @@ public class AuthenticationFilter implements GatewayFilter {
             }
 
             Claims claims = jwtUtil.getClaims(token);
-            exchange.getRequest().mutate().header("id", String.valueOf(claims.get("id"))).build();
         }
         return chain.filter(exchange);
     }
