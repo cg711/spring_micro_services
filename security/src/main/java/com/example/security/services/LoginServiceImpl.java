@@ -4,6 +4,7 @@ import com.example.security.dtos.UserResponseDTO;
 import com.example.security.jwt.JwtUtil;
 import com.example.security.dtos.LoginRequestDTO;
 import com.example.security.dtos.UserRequestDTO;
+import com.example.security.repository.SecurityRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class LoginServiceImpl implements LoginService {
     JwtUtil jwtUtil;
 
     @Autowired
+    SecurityRepository securityRepository;
+
+    @Autowired
     private UserService userService;
 
     /**
@@ -38,14 +42,14 @@ public class LoginServiceImpl implements LoginService {
         UserResponseDTO user = fetchUserDetails.apply(loginRequestDTO);
         validateUserUsername.accept(user);
         validateUserPassword.accept(loginRequestDTO, user);
-        return jwtUtil.createJWT(loginRequestDTO.getCredential(), request);
+        return jwtUtil.createJWT(loginRequestDTO.getUsername(), request);
     }
 
     /**
      * Returns the details of a specified user.
      */
     private Function<LoginRequestDTO, UserResponseDTO> fetchUserDetails = (loginRequestDTO) -> {
-        return userService.searchUser(UserRequestDTO.builder().username(loginRequestDTO.getCredential()).build());
+        return userService.searchUser(UserRequestDTO.builder().username(loginRequestDTO.getUsername()).build());
     };
 
     /**

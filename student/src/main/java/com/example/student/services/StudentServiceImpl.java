@@ -54,9 +54,12 @@ public class StudentServiceImpl implements StudentService {
                 studentData.setLastName(student.getLastName());
                 studentData.setSsn(student.getSsn());
                 studentData.setGrade(student.getGrade());
-                return studentRepository.save(studentData);
+                Student tempStudent =  studentRepository.save(studentData);
+                sendAppLog("Successfully updated student " + student.getFirstName() + " in database.", getCurrentTime());
+                return tempStudent;
             }
         }
+        sendAppLog("Succesfully added student " + student.getFirstName() + "into database.", getCurrentTime());
         return studentRepository.save(student);
     }
 
@@ -67,7 +70,6 @@ public class StudentServiceImpl implements StudentService {
      */
     @Override
     public Student findById(Long id) throws NotFoundException {
-        Optional<Student> studentOptional = studentRepository.findById(id);
         return studentRepository.findById(id).orElseThrow(() -> new NotFoundException(Student.class, id));
     }
 
@@ -78,6 +80,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void deleteById(Long id) {
         studentRepository.deleteById(id);
+        sendAppLog("Attempted to delete student with id " + id.toString(), getCurrentTime());
     }
 
     /**
@@ -85,10 +88,9 @@ public class StudentServiceImpl implements StudentService {
      * as the message to go along with the error.
      * @param message Message bundled with error.
      * @param time Time of error.
-     * @throws JSONException
      */
     @Override
-    public void sendAppLog(String message, String time) throws JSONException {
+    public void sendAppLog(String message, String time) {
         final String url = "http://localhost:8082/applog-services/createAppLog";
         JSONObject appLogJSON = new JSONObject();
         try {
@@ -114,16 +116,17 @@ public class StudentServiceImpl implements StudentService {
         map.put("startTime", new JobParameter(System.currentTimeMillis()));
         map.put("fileName", new JobParameter(fileName));
         JobParameters jobParameters = new JobParameters(map);
-        String time = new Date().toString();
         try {
             jobLauncher.run((Job)applicationContext.getBean("ETL"), jobParameters);
+            sendAppLog("Succesfully executed batch job", getCurrentTime());
         } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException |
                  JobParametersInvalidException e) {
-            try {
-                sendAppLog(e.getMessage(), time);
-            } catch (JSONException err) {
-                throw new RuntimeException(err);
-            }
+            sendAppLog(e.getMessage(), getCurrentTime());
         }
     }
+
+    public String getCurrentTime() {
+        return new Date().toString();
+    }
+
 }

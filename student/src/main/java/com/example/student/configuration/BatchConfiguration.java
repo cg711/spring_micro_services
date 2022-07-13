@@ -4,6 +4,7 @@ package com.example.student.configuration;
 import com.example.student.configuration.batch.StudentReader;
 import com.example.student.configuration.batch.StudentWriter;
 import com.example.student.model.Student;
+import com.example.student.services.StudentService;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -33,12 +34,16 @@ public class BatchConfiguration {
     JobBuilderFactory jobBuilderFactory;
 
     @Autowired
+    StudentService studentService;
+
+    @Autowired
     StudentReader studentReader;
 
     @Autowired
     StudentWriter studentWriter;
     @Bean("ETL")
     public Job jobRun() {
+        studentService.sendAppLog("Attempting Batch Process", studentService.getCurrentTime());
         return jobBuilderFactory.get("myJob")
                 .incrementer(new RunIdIncrementer())
                 .flow(step())

@@ -13,7 +13,8 @@ public class GatewayConfig {
     AuthenticationFilter authenticationFilter;
 
     /**
-     * Establishes a gateway connection with both applog and student.
+     * Establishes a gateway connection with applog, security and student.
+     * Authenticates using a security middleware.
      * @param builder The route locator object used to link each route.
      * @return A route locator object used to find each microservice by their respective routes.
      */

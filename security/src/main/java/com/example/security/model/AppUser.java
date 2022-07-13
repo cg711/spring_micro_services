@@ -25,6 +25,9 @@ public class AppUser {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "jwt")
+    private String jwt;
+
     @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
     private List<String> roles = new ArrayList<>();

@@ -6,7 +6,7 @@ import lombok.*;
 @Setter
 public class LoginRequestDTO {
 
-    private String credential;
+    private String username;
     private String password;
 
 }

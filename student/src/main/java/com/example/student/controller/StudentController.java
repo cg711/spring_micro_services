@@ -35,6 +35,7 @@ public class StudentController {
     @GetMapping("findStudentById/{studentId}")
     public StudentDTO findStudentById(@PathVariable("studentId") long studentId) throws NotFoundException {
         Student studentData = studentService.findById(studentId);
+        studentService.sendAppLog("Made GET request to '/findStudentById/" + studentId + "'.", studentService.getCurrentTime());
         return StudentMapper.toStudentDTO(studentData);
     }
 
@@ -44,6 +45,7 @@ public class StudentController {
      */
     @GetMapping("/testBatch/{fileName}")
     public void testBatchWithFile(@PathVariable("fileName") String fileName) {
+        studentService.sendAppLog("Made GET request to '/testBatch/" + fileName + "'.", studentService.getCurrentTime());
         studentService.batchProcess(fileName);
     }
 
@@ -53,6 +55,7 @@ public class StudentController {
      */
     @DeleteMapping("deleteStudentById/{studentId}")
     public void deleteStudentById(@PathVariable("studentId") long studentId){
+        studentService.sendAppLog("Made DELETE request to 'deleteStudentById/" + studentId + "'.", studentService.getCurrentTime());
         studentService.deleteById(studentId);
     }
 }

@@ -15,7 +15,9 @@ public interface StudentService {
 
     void deleteById(Long id);
 
-    void sendAppLog(String message, String time) throws JSONException;
+    void sendAppLog(String message, String time);
 
     void batchProcess(String filename);
+
+    String getCurrentTime();
 }
