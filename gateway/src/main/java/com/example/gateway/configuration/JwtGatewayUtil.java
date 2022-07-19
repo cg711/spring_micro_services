@@ -35,6 +35,7 @@ public class JwtGatewayUtil {
 //            String expired = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(parseToken(token)).getBody()..getExpiration().toString();
         } catch (SignatureException ex) {
             LOGGER.info("invalid signature");
+            //exceptionMethod(ex.message
             throw new Exception("Invalid JWT signature");
         } catch (MalformedJwtException ex) {
             LOGGER.info("invalid token");

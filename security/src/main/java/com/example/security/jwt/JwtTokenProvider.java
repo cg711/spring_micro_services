@@ -1,5 +1,6 @@
 package com.example.security.jwt;
 
+import com.example.security.exceptions.UnauthorizedUserException;
 import com.example.security.services.UserService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -76,7 +77,7 @@ public class JwtTokenProvider {
                     .parseClaimsJws(token);
             return !claims.getBody().getExpiration().before(new Date());
         } catch (JwtException | IllegalArgumentException e) {
-            throw new Exception("Unauthorized User");
+            throw new UnauthorizedUserException();
         }
     }
 }

@@ -92,6 +92,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void sendAppLog(String message, String time) {
         final String url = "http://localhost:8082/applog-services/createAppLog";
+
         JSONObject appLogJSON = new JSONObject();
         try {
             appLogJSON.put("message", message);
@@ -104,6 +105,21 @@ public class StudentServiceImpl implements StudentService {
         HttpEntity<String> request = new HttpEntity<String>(appLogJSON.toString(), headers);
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.postForObject(url, request, String.class);
+    }
+    @Override
+    public int getStatus(Exception e) {
+        final String url = "http://localhost:8085/common-services/handleExceptions";
+        JSONObject statusJson  = new JSONObject();
+        try {
+            statusJson.put("exception", e.getClass().toString());
+        } catch (JSONException ex) {
+            throw new RuntimeException(ex);
+        }
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<String> request = new HttpEntity<String>(statusJson.toString(), headers);
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.postForObject(url, request, String.class);
     }
 
     /**

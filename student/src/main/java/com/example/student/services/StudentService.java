@@ -20,4 +20,6 @@ public interface StudentService {
     void batchProcess(String filename);
 
     String getCurrentTime();
+
+    int getStatus(Exception e);
 }

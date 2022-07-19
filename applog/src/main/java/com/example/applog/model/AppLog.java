@@ -23,5 +23,8 @@ public class AppLog {
     @Column(name="time")
     private String time;
 
+    @Column(name="status")
+    private Integer status;
+
 }
 
