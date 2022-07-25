@@ -7,6 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="scheduler" />
+        <module name="batches" />
         <module name="security" />
         <module name="microservices_project" />
         <module name="student" />
@@ -18,10 +20,12 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="applog" target="1.8" />
+      <module name="batches" target="1.8" />
       <module name="common_service" target="1.8" />
       <module name="discovery_server" target="1.8" />
       <module name="gateway" target="1.8" />
       <module name="microservices_project" target="1.8" />
+      <module name="scheduler" target="1.8" />
       <module name="security" target="1.8" />
       <module name="student" target="1.8" />
     </bytecodeTargetLevel>
@@ -29,10 +33,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="applog" options="-parameters" />
+      <module name="batches" options="-parameters" />
       <module name="common_service" options="-parameters" />
       <module name="discovery_server" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="microservices_project" options="-parameters" />
+      <module name="scheduler" options="-parameters" />
       <module name="security" options="-parameters" />
       <module name="student" options="-parameters" />
     </option>

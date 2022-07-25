@@ -16,6 +16,7 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.ApplicationContext;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -119,7 +120,7 @@ public class StudentServiceImpl implements StudentService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> request = new HttpEntity<String>(statusJson.toString(), headers);
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForObject(url, request, String.class);
+        return restTemplate.postForObject(url, request, Integer.class);
     }
 
     /**
@@ -141,8 +142,26 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
+    public void callBatchJob(String fileName) {
+        final String URL = "http://localhost:8086/batch/student/" + fileName;
+
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.getForObject(URL, String.class);
+    }
+
     public String getCurrentTime() {
         return new Date().toString();
     }
 
 }
+
+
+//TODO Microservices for scheduling batches and multithreading
+//START: gateway timeout (504 error) -> load balancer (circuit breaker), uses hystrix
+//Thread will execute every 5 minutes, will check database for new entires (jobs)
+//  name service scheduler & batches
+//  if job, will put in scheduler and then will schedule job for respective prone expression
+//  JobListener: beforeJob() -executes before job is executed, afterJob() -executes after job
+//  before schedule A, after schedule B, after B schedule C etc.
+
+//where to enable hsytrix dashboard, main file

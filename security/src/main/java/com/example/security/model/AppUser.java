@@ -33,3 +33,5 @@ public class AppUser {
     private List<String> roles = new ArrayList<>();
 
 }
+//Make seperate service for login, gateway, securtiy (will need to split up)
+//auth-service (login), will have sign-up, sign-in, forgot password, etc.

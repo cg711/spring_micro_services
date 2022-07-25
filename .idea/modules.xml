@@ -3,10 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/applog/applog.iml" filepath="$PROJECT_DIR$/applog/applog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/batches/batches.iml" filepath="$PROJECT_DIR$/batches/batches.iml" />
       <module fileurl="file://$PROJECT_DIR$/common_service/common_service.iml" filepath="$PROJECT_DIR$/common_service/common_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/discovery_server/discovery_server.iml" filepath="$PROJECT_DIR$/discovery_server/discovery_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/microservices_project.iml" filepath="$PROJECT_DIR$/.idea/microservices_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scheduler/scheduler.iml" filepath="$PROJECT_DIR$/scheduler/scheduler.iml" />
       <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" />
       <module fileurl="file://$PROJECT_DIR$/student/student.iml" filepath="$PROJECT_DIR$/student/student.iml" />
     </modules>

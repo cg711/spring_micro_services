@@ -5,21 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4655bf33-af2e-4e9f-8d16-956765664196" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_client_unknown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common_service/src/main/java/com/example/common_service/controller/CommonServiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common_service/src/main/java/com/example/common_service/service/CommonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common_service/src/main/java/com/example/common_service/service/CommonServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/exceptions/UnauthorizedUserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/controller/BatchesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/service/BatchesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/service/BatchesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/DTO/ScheduleRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/controller/SchedulerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/service/SchedulerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/service/SchedulerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applog/src/main/java/com/example/applog/model/AppLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/applog/src/main/java/com/example/applog/model/AppLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/configuration/JwtGatewayUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/configuration/JwtGatewayUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/jwt/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/jwt/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/configuration/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/configuration/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/model/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/model/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/controller/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +64,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.StudentApplication">
+  <component name="RunManager" selected="Application.AppLogApplication">
     <configuration name="AppLogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.applog.AppLogApplication" />
       <module name="applog" />
@@ -128,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AppLogApplication" />
         <item itemvalue="Application.StudentApplication" />
         <item itemvalue="Application.SecurityApplication" />
         <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
-        <item itemvalue="Application.AppLogApplication" />
       </list>
     </recent_temporary>
   </component>

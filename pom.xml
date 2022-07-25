@@ -51,5 +51,8 @@
         <module>gateway</module>
         <module>student</module>
         <module>security</module>
+        <module>common_service</module>
+        <module>batches</module>
+        <module>scheduler</module>
     </modules>
 </project>

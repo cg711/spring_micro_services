@@ -22,4 +22,6 @@ public interface StudentService {
     String getCurrentTime();
 
     int getStatus(Exception e);
+
+    void callBatchJob(String fileName);
 }

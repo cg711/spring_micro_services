@@ -43,10 +43,10 @@ public class StudentController {
      * Starts a batch process on the given file.
      * @param fileName Name of file to be processed.
      */
-    @GetMapping("/testBatch/{fileName}")
+    @GetMapping("/batch/{fileName}")
     public void testBatchWithFile(@PathVariable("fileName") String fileName) {
-        studentService.sendAppLog("Made GET request to '/testBatch/" + fileName + "'.", studentService.getCurrentTime());
-        studentService.batchProcess(fileName);
+        studentService.sendAppLog("Made GET request to '/batch/" + fileName + "'.", studentService.getCurrentTime());
+        studentService.callBatchJob(fileName);
     }
 
     /**
