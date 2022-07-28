@@ -6,6 +6,7 @@ import com.example.student.mapper.StudentMapper;
 import com.example.student.model.Student;
 import com.example.student.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -44,9 +45,8 @@ public class StudentController {
      * @param fileName Name of file to be processed.
      */
     @GetMapping("/batch/{fileName}")
-    public void testBatchWithFile(@PathVariable("fileName") String fileName) {
-        studentService.sendAppLog("Made GET request to '/batch/" + fileName + "'.", studentService.getCurrentTime());
-        studentService.callBatchJob(fileName);
+    public void testBatchWithFile(@PathVariable("fileName")  String fileName) {
+        studentService.batchProcess(fileName);
     }
 
     /**

@@ -87,7 +87,7 @@ public class UserServiceImpl implements UserService {
                 " WHERE";
 
         if (!Objects.isNull(requestDTO.getUsername()))
-            query += " username= '" + requestDTO.getUsername() + "'";
+            query += " username = '" + requestDTO.getUsername() + "'";
         return query;
     };
 

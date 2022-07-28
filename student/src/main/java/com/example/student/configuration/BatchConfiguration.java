@@ -43,7 +43,7 @@ public class BatchConfiguration {
     StudentWriter studentWriter;
     @Bean("ETL")
     public Job jobRun() {
-        studentService.sendAppLog("Attempting Batch Process", studentService.getCurrentTime());
+//        studentService.sendAppLog("Attempting Batch Process", studentService.getCurrentTime());
         return jobBuilderFactory.get("myJob")
                 .incrementer(new RunIdIncrementer())
                 .flow(step())

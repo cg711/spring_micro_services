@@ -5,6 +5,8 @@ import com.example.student.model.Student;
 import com.example.student.repository.StudentRepository;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameter;
 import org.springframework.batch.core.JobParameters;
@@ -32,6 +34,8 @@ import java.util.Optional;
 
 @Service
 public class StudentServiceImpl implements StudentService {
+
+    public static Logger LOGGER = LoggerFactory.getLogger(StudentServiceImpl.class);
     @Autowired
     StudentRepository studentRepository;
 
@@ -92,7 +96,7 @@ public class StudentServiceImpl implements StudentService {
      */
     @Override
     public void sendAppLog(String message, String time) {
-        final String url = "http://localhost:8082/applog-services/createAppLog";
+        final String url = "http://localhost:8082/applog/createAppLog";
 
         JSONObject appLogJSON = new JSONObject();
         try {
@@ -164,4 +168,7 @@ public class StudentServiceImpl implements StudentService {
 //  JobListener: beforeJob() -executes before job is executed, afterJob() -executes after job
 //  before schedule A, after schedule B, after B schedule C etc.
 
-//where to enable hsytrix dashboard, main file
+//  where to enable hsytrix dashboard, main file
+
+//scheduler configurer
+//public syncronized void

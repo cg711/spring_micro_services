@@ -5,25 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4655bf33-af2e-4e9f-8d16-956765664196" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/controller/BatchesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/service/BatchesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/service/BatchesServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/DTO/ScheduleRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/controller/SchedulerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/service/SchedulerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/service/SchedulerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_andrewoma_dexx_dexx_collections_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_vlsi_compactmap_compactmap_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_archaius_archaius_core_0_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/repository/SchedulerStudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_6_10_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_batch_2_7_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_3_22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_22.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_3_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_22.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batches/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/batches/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/BatchesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/BatchesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/controller/BatchesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/controller/BatchesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/service/BatchesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/service/BatchesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/service/BatchesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/batches/src/main/java/com/example/batches/service/BatchesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batches/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/batches/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/configuration/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/configuration/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/model/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/model/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/DTO/ScheduleRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/controller/SchedulerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/controller/SchedulerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/service/SchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/service/SchedulerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/service/SchedulerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/example/scheduler/service/SchedulerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/com/example/security/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/com/example/security/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/configuration/BatchConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/configuration/BatchConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/services/StudentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/student/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +54,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -64,7 +85,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.AppLogApplication">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.scheduler.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StudentApplication">
     <configuration name="AppLogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.applog.AppLogApplication" />
       <module name="applog" />
@@ -78,12 +104,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiscoveryServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.discovery_server.DiscoveryServerApplication" />
-      <module name="discovery_server" />
+    <configuration name="BatchesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.batches.BatchesApplication" />
+      <module name="batches" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.discovery_server.*" />
+          <option name="PATTERN" value="com.example.batches.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,12 +117,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.gateway.GatewayApplication" />
-      <module name="gateway" />
+    <configuration name="SchedulerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.scheduler.SchedulerApplication" />
+      <module name="scheduler" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.gateway.*" />
+          <option name="PATTERN" value="com.example.scheduler.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AppLogApplication" />
         <item itemvalue="Application.StudentApplication" />
+        <item itemvalue="Application.SchedulerApplication" />
+        <item itemvalue="Application.BatchesApplication" />
+        <item itemvalue="Application.AppLogApplication" />
         <item itemvalue="Application.SecurityApplication" />
-        <item itemvalue="Application.GatewayApplication" />
-        <item itemvalue="Application.DiscoveryServerApplication" />
       </list>
     </recent_temporary>
   </component>

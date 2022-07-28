@@ -30,9 +30,6 @@ public class GatewayConfig {
                 .route(r -> r.path("/security/**")
                         .filters(f -> f.filter(authenticationFilter))
                         .uri("http://localhost:8084"))
-                .route(r -> r.path("/batch/**")
-                        .filters(f -> f.filter(authenticationFilter))
-                        .uri("http://localhost:8086"))
                 .build();
     }
 }
